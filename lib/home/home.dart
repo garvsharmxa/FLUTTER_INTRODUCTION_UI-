@@ -102,7 +102,7 @@ class HomePage extends StatelessWidget {
               onPressed: () =>
                   launch('https://www.linkedin.com/in/garvsharmxa/'),
               icon: Icon(
-                FontAwesomeIcons.li nkedin,
+                FontAwesomeIcons.linkedin,
                 size: 30,
                 color: Colors.white,
               ),
