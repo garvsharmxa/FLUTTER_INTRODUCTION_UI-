@@ -10,25 +10,18 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final garv = const Hero(
+    const garv = Hero(
       tag: 'hero',
-      child: Padding(
-        padding: EdgeInsets.all(0),
-        child: CircleAvatar(
-          radius: 135.0,
-          backgroundColor: Colors.transparent,
-          backgroundImage: AssetImage('assets/lw.png'),
-        ),
-      ),
+      child: Image(image: AssetImage("assets/lw.png"))
     );
 
-    final welcome = const Padding(
+    const welcome = Padding(
       padding: EdgeInsets.all(12.0),
       child: Text(
         "GARV SHARMA",
         style: TextStyle(
             fontSize: 40.0,
-            color: Colors.white,
+            color: Colors.orange,
             fontStyle: FontStyle.italic,
             fontWeight: FontWeight.bold),
       ),
@@ -43,10 +36,10 @@ class HomePage extends StatelessWidget {
             color: Colors.transparent,
             child: IconButton(
               onPressed: () => launch('mailto:sgarv0710@gmail.com'),
-              icon: Icon(
+              icon: const Icon(
                 Icons.email,
                 size: 30,
-                color: Colors.white,
+                color: Colors.green,
               ),
             ),
           ),
@@ -57,10 +50,10 @@ class HomePage extends StatelessWidget {
             color: Colors.transparent,
             child: IconButton(
               onPressed: () => launch('https://github.com/garvsharmxa'),
-              icon: Icon(
+              icon: const Icon(
                 FontAwesomeIcons.github,
                 size: 30,
-                color: Colors.white,
+                color: Colors.black,
               ),
             ),
           ),
@@ -71,10 +64,10 @@ class HomePage extends StatelessWidget {
             color: Colors.transparent,
             child: IconButton(
               onPressed: () => launch('https://www.instagram.com/garvsharmxa/'),
-              icon: Icon(
+              icon: const Icon(
                 FontAwesomeIcons.instagram,
                 size: 30,
-                color: Colors.white,
+                color: Colors.pinkAccent,
               ),
             ),
           ),
@@ -86,25 +79,25 @@ class HomePage extends StatelessWidget {
             child: IconButton(
               onPressed: () => launch(
                   'https://www.youtube.com/channel/UCP6jI0MWwGSCL5SIWnwyTzQ'),
-              icon: Icon(
+              icon: const Icon(
                 FontAwesomeIcons.youtube,
                 size: 30,
-                color: Colors.white,
+                color: Colors.red,
               ),
             ),
           ),
         ),
         Padding(
-          padding: EdgeInsets.all(6.5),
+          padding: const EdgeInsets.all(6.5),
           child: Container(
             color: Colors.transparent,
             child: IconButton(
               onPressed: () =>
                   launch('https://www.linkedin.com/in/garvsharmxa/'),
-              icon: Icon(
-                FontAwesomeIcons.li nkedin,
+              icon: const Icon(
+                FontAwesomeIcons.linkedin,
                 size: 30,
-                color: Colors.white,
+                color: Colors.blue,
               ),
             ),
           ),
@@ -112,16 +105,16 @@ class HomePage extends StatelessWidget {
       ],
     );
 
-    final intro = const Padding(
+    const intro = Padding(
       padding: EdgeInsets.all(10.0),
       child: Text(
         "         About Myself                               ",
         style: TextStyle(
-            fontSize: 30.0, color: Colors.white, fontWeight: FontWeight.bold),
+            fontSize: 30.0, color: Colors.deepOrange, fontWeight: FontWeight.bold),
       ),
     );
 
-    final lorem = const Padding(
+    const lorem = Padding(
       padding: EdgeInsets.all(10.0),
       child: Text(
         "A second year Computer Science student at Chandigarh University with an interest in Coding, AR & VR , App Development and Video Editing.",
@@ -130,24 +123,24 @@ class HomePage extends StatelessWidget {
       ),
     );
 
-    final preet = const Padding(
+    const preet = Padding(
       padding: EdgeInsets.all(8.0),
       child: Text(
         "Specialties",
         style: TextStyle(
-            fontSize: 30.0, color: Colors.white, fontWeight: FontWeight.bold),
+            fontSize: 30.0, color: Colors.limeAccent, fontWeight: FontWeight.bold),
       ),
     );
 
-    final boy = const Padding(
+    const boy = Padding(
       padding: EdgeInsets.all(0),
       child: Text(
-        "                                         1.Canva       ",
+        "                                             1.Canva       ",
         style: TextStyle(
             fontSize: 25.0, color: Colors.white, fontWeight: FontWeight.bold),
       ),
     );
-    final bag = const Padding(
+    const bag = Padding(
       padding: EdgeInsets.all(0),
       child: Text(
         "                                                     2.Video Edditing       ",
@@ -156,18 +149,18 @@ class HomePage extends StatelessWidget {
       ),
     );
 
-    final car = const Padding(
+    const car = Padding(
       padding: EdgeInsets.all(0),
       child: Text(
-        "                                             3.Fast Learner    ",
+        "                                                3.Fast Learner    ",
         style: TextStyle(
             fontSize: 25.0, color: Colors.white, fontWeight: FontWeight.bold),
       ),
     );
-    final cad = const Padding(
+    const cad = Padding(
       padding: EdgeInsets.all(0),
       child: Text(
-        "                                                    4.   ",
+        "                                                      4.",
         style: TextStyle(
             fontSize: 25.0, color: Colors.white, fontWeight: FontWeight.bold),
       ),
@@ -177,10 +170,10 @@ class HomePage extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       padding: const EdgeInsets.all(15.0),
       decoration: const BoxDecoration(
-        gradient: LinearGradient(colors: [Colors.deepPurple, Colors.red]),
+        gradient: LinearGradient(colors: [Colors.teal, Colors.deepPurpleAccent]),
       ),
       child: SingleChildScrollView(
-        child: Padding( padding: EdgeInsets.all(12),
+        child: Padding( padding: const EdgeInsets.all(12),
           child: Column(
             children: [
               garv,
