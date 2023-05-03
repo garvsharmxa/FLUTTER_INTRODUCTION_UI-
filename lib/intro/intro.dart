@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '../home/home.dart';
-
 
 class LoginPage extends StatefulWidget {
   static String tag = 'login-page';
@@ -10,37 +10,51 @@ class LoginPage extends StatefulWidget {
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
+
 class _LoginPageState extends State<LoginPage> {
   @override
-
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+        const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+
+    double width = MediaQuery.of(context).size.width;
+
     final logo = Hero(
       tag: 'hero',
       child: CircleAvatar(
         backgroundColor: Colors.transparent,
-        radius:200.0,
+        radius: width * 0.5,
         child: Image.asset('assets/hi.png'),
       ),
     );
 
-
     final loginbutton = Padding(
-      padding: const EdgeInsets.symmetric(vertical: 16.0),
+      padding: EdgeInsets.symmetric(vertical: width * 0.1),
       child: Material(
-        borderRadius: BorderRadius.circular(30.0),
+        borderRadius: BorderRadius.circular(width * 0.1),
         shadowColor: Colors.lightBlueAccent.shade100,
         color: Colors.white,
-        elevation:15.0,
-        child: MaterialButton(
-          minWidth: 200.0,
-          height: 42.0,
-          onPressed: () {
-            Navigator.of(context).pushNamed(HomePage.tag);
-          },
-          color: Colors.red[500],
-          child: const Text(
-            'Click Here To Know More !',
-            style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 19),
+        elevation: width * 0.05 ,
+        child: Padding(
+          padding:  EdgeInsets.symmetric(horizontal: width * 0.02),
+          child: ElevatedButton(
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(Colors.red[500]!),
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(width * 0.1),
+                ),
+              
+              ),
+            ),
+            onPressed: () {
+              Navigator.of(context).pushNamed(HomePage.tag);
+            },
+            child: Text(
+              'Click Here To Know More !',
+              style: TextStyle(
+                  color: Colors.white, fontWeight: FontWeight.bold, fontSize: width * 0.05),
+            ),
           ),
         ),
       ),
@@ -51,13 +65,13 @@ class _LoginPageState extends State<LoginPage> {
       body: Center(
         child: ListView(
           shrinkWrap: true,
-          padding: const EdgeInsets.only(left: 25.0 ,right: 25.0 ),
+          padding: EdgeInsets.symmetric(horizontal: width * 0.1),
           children: [
             logo,
-            const SizedBox(
-              height: 48.0,
+            SizedBox(
+              height: width * 0.1,
             ),
-           loginbutton,
+            loginbutton,
           ],
         ),
       ),
